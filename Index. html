@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DocSpot - Book Appointment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 DocSpot</h1>
+    <p>Seamless Health Appointment Booking</p>
+
+    <form id="appointmentForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required />
+      <input type="date" id="date" required />
+      <select id="doctor" required>
+        <option value="">Select Doctor</option>
+        <option value="Dr. Meena">Dr. Meena - Dentist</option>
+        <option value="Dr. Rakesh">Dr. Rakesh - Pediatrician</option>
+        <option value="Dr. Asha">Dr. Asha - General Physician</option>
+      </select>
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <div id="confirmation"></div>
+    <div class="appointments">
+      <h3>📅 All Appointments</h3>
+      <ul id="appointmentList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
