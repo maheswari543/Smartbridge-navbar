@@ -1,0 +1,52 @@
+document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const date = document.getElementById("date").value;
+  const doctor = document.getElementById("doctor").value;
+
+  if (!name || !email || !phone || !date || !doctor) {
+    alert("Please fill all fields.");
+    return;
+  }
+
+  const appointment = {
+    name,
+    email,
+    phone,
+    date,
+    doctor
+  };
+
+  saveAppointment(appointment);
+  showConfirmation(appointment);
+  this.reset();
+  loadAppointments();
+});
+
+function saveAppointment(data) {
+  const appointments = JSON.parse(localStorage.getItem("appointments") || "[]");
+  appointments.push(data);
+  localStorage.setItem("appointments", JSON.stringify(appointments));
+}
+
+function showConfirmation(appointment) {
+  document.getElementById("confirmation").textContent =
+    `✅ Appointment booked for ${appointment.name} with ${appointment.doctor} on ${appointment.date}.`;
+}
+
+function loadAppointments() {
+  const list = document.getElementById("appointmentList");
+  const appointments = JSON.parse(localStorage.getItem("appointments") || "[]");
+
+  list.innerHTML = "";
+  appointments.forEach(app => {
+    const item = document.createElement("li");
+    item.textContent = `${app.date}: ${app.name} with ${app.doctor}`;
+    list.appendChild(item);
+  });
+}
+
+window.onload = loadAppointments;
