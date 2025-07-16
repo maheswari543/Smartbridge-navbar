@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef6f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #0074d9;
+}
+
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #0074d9;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+#confirmation {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+.appointments {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.appointments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.appointments li {
+  background: #f0faff;
+  margin: 5px 0;
+  padding: 10px;
+  border-left: 4px solid #0074d9;
+  border-radius: 6px;
+}
